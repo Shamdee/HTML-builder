@@ -2,6 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const { stdin, stdout, } = process;
 
+fs.open(path.join(__dirname, 'text.txt'), 'w', (err) => {
+  if(err) throw err;
+});
 stdout.write('Enter text\n');
 
 stdin.on('data', data => {
